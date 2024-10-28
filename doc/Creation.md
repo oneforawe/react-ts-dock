@@ -83,7 +83,7 @@ While in the container, initialize the React app using the version of Node
 * React: initialize the React app in the docker container.
   * In the project folder `~/react-ts`, initialize the react-app.  
     `$ npx create-react-app react-app --template typescript`
-  * Enter the React app.  
+  * Enter the React app and check live-edits.  
     `$ cd react-app`  
     At this point, the initial React app should be able to run in development
     mode using `npm start` in the container, with the app visible at
@@ -91,6 +91,19 @@ While in the container, initialize the React app using the version of Node
     editable in both host and container, being roughly immediately seen to
     change in each place and with changes to the React code immediately visible
     in the browser on the host.
-  * Get a more-commented TypeScript config file (and edit to combine with the
-    create-react-app original).  
-    `$ mv tsconfig.json tsconfig-copy.json && npx tsc --init`
+
+## Reorganize
+
+* TypeScript config  
+  Get a more-commented TypeScript config file (and edit to combine with the
+  create-react-app original).  
+  `$ mv tsconfig.json tsconfig-copy.json && npx tsc --init`
+* Dependencies  
+  Move some NPM packages in `package.json` from `dependencies` to
+  `devDependencies`.
+  * `$ npm install --save-dev @types/node @types/react @types/react-dom @types/jest`
+  * `$ npm install --save-dev @testing-library/react @testing-library/user-event @testing-library/jest-dom`
+  * `$ npm install --save-dev react-scripts`  
+    (`--save-dev` so can use `npm audit --omit=dev` to see cleaner audit;
+    [reference](https://github.com/facebook/create-react-app/issues/11174))
+  * `$ npm install --save-dev typescript`
