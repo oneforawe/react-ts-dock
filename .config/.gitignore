@@ -1,0 +1,39 @@
+# Reference:
+# https://help.github.com/articles/ignoring-files/
+# https://github.com/github/gitignore
+
+
+# private
+secrets.*
+credentials.*
+*.pem
+
+# configs
+user.gitconfig
+
+# environment
+.env
+.env.*
+.env*.local
+
+# dependencies
+/react-app/node_modules/
+
+# development
+*.tsbuildinfo
+
+# testing
+/react-app/coverage/
+
+# production
+/react-app/build/
+
+# logs
+*.log
+npm-debug.log*
+
+# miscellaneous
+# text-editor backup files
+*~
+# Mac Desktop Services Store customization files
+.DS_Store
