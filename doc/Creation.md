@@ -134,3 +134,7 @@ differences from the normal JSON syntax.
     commands, so that, for instance `react-scripts start` becomes `craco start`.
   * Add the line `"cracoConfig": "./.config/craco.config.js",` to incorporate
     the craco config.
+
+At this point the source files for the React app were reorganized and modified,
+for instance, to start using non-relative import paths (in `src/index.tsx` and
+later elsewhere).
