@@ -33,7 +33,8 @@ This project template has prerequisites or co-requisites, such as:
 ## Initialize Git, Docker, React
 
 The following shell (bash/zsh) commands were used to initialize the repository
-in a host system.
+in a host system.  (For the host system command line prompt I use the symbol
+`>`.)
 
 * Create and enter the project folder/directory.  
   `> mkdir react-ts-dock`  
@@ -78,7 +79,8 @@ in a host system.
     `> docker compose exec node-dev-for-app bash --login`
 
 While in the container, initialize the React app using the version of Node
-(npx) installed with the Docker files.
+(npx) installed with the Docker files.  (For the container system command line
+prompt I use the symbol `$`.)
 
 * React: initialize the React app in the docker container.
   * In the project folder `~/react-ts`, initialize the react-app.  
@@ -119,9 +121,9 @@ file with comments) does not have syntax errors due to the comments and other
 differences from the normal JSON syntax.
 
 * add packages
-  * `npm install --save-dev @craco/craco @craco/types`
-  * `npm install --save-dev react-app-alias`
-  * `npm install --save-dev json5`
+  * `$ npm install --save-dev @craco/craco @craco/types`
+  * `$ npm install --save-dev react-app-alias`
+  * `$ npm install --save-dev json5`
 * new `react-app/.config` folder with two new files
   * new file: `craco.config.js`
   * new file: `tsconfig.paths.json`
