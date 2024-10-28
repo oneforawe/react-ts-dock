@@ -106,4 +106,31 @@ While in the container, initialize the React app using the version of Node
   * `$ npm install --save-dev react-scripts`  
     (`--save-dev` so can use `npm audit --omit=dev` to see cleaner audit;
     [reference](https://github.com/facebook/create-react-app/issues/11174))
-  * `$ npm install --save-dev typescript`
+  * `$ npm install --save-dev typescript@^4`  
+    (`@^4` to fix dependency issue found with `react-scripts` and, later, `craco`)
+
+## Improve Imports
+
+The packages [craco](https://craco.js.org) and
+[react-app-alias](https://github.com/oklas/react-app-alias) enable import
+aliases and abbreviations and generally enable more concise import statements.
+These packages need additional `json5` support so the `tsconfig.json` (a JSON5
+file with comments) does not have syntax errors due to the comments and other
+differences from the normal JSON syntax.
+
+* add packages
+  * `npm install --save-dev @craco/craco @craco/types`
+  * `npm install --save-dev react-app-alias`
+  * `npm install --save-dev json5`
+* new `react-app/.config` folder with two new files
+  * new file: `craco.config.js`
+  * new file: `tsconfig.paths.json`
+* modified: `tsconfig.json`
+  * Add the line `"extends": "./.config/tsconfig.paths.json",` to incorporate
+    the paths config for path aliases.
+  * Add the line `"baseUrl": "./src",` to resolve non-relative import paths.
+* modified: `package.json`
+  * In the scripts, change the four `react-scripts` commands with `craco`
+    commands, so that, for instance `react-scripts start` becomes `craco start`.
+  * Add the line `"cracoConfig": "./.config/craco.config.js",` to incorporate
+    the craco config.
