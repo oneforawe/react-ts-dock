@@ -1,0 +1,7 @@
+# Reference:
+# https://docs.docker.com/reference/dockerfile/#dockerignore-file
+
+.git
+.dockerignore
+node_modules
+build

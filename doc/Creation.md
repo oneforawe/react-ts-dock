@@ -64,3 +64,15 @@ in a host system.
     set up with alias and key for github).  
     `> git remote add origin git@github:oneforawe/react-ts-dock.git`  
     `> git push --set-upstream origin main`
+* Docker: initialize and enter container.
+  * Create the initial Docker infrastructure that will create a container for
+    the React app.  
+    Create `Dockerfile`, `docker-compose.yml`, and `.dockerignore`.  
+    (Discovered that Alpine may not be the best image to use with Node; instead
+    use Bitnami/Minideb, a minimal Debian image.)  
+    Arrange to use a node manager (nvm) to install node, preparing to use node
+    to create the React project.
+  * Create the Docker image and build and run the container.  
+    `> docker compose build && docker compose up -d`
+  * Enter the container.  
+    `> docker compose exec node-dev-for-app bash --login`
