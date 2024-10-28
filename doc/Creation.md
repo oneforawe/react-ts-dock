@@ -76,3 +76,18 @@ in a host system.
     `> docker compose build && docker compose up -d`
   * Enter the container.  
     `> docker compose exec node-dev-for-app bash --login`
+
+While in the container, initialize the React app using the version of Node
+(npx) installed with the Docker files.
+
+* React: initialize the React app in the docker container.
+  * In the project folder `~/react-ts`, initialize the react-app.  
+    `$ npx create-react-app react-app --template typescript`
+  * Enter the React app.  
+    `$ cd react-app`  
+    At this point, the initial React app should be able to run in development
+    mode using `npm start` in the container, with the app visible at
+    <http://localhost:3000/> in a host browser, and the files should be
+    editable in both host and container, being roughly immediately seen to
+    change in each place and with changes to the React code immediately visible
+    in the browser on the host.
