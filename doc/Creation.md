@@ -91,3 +91,6 @@ While in the container, initialize the React app using the version of Node
     editable in both host and container, being roughly immediately seen to
     change in each place and with changes to the React code immediately visible
     in the browser on the host.
+  * Get a more-commented TypeScript config file (and edit to combine with the
+    create-react-app original).  
+    `$ mv tsconfig.json tsconfig-copy.json && npx tsc --init`
