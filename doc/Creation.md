@@ -183,3 +183,59 @@ Some of these packages already come with `react-scripts`. Instead, I avoided
 
 See the [troubleshoot](./Troubleshoot.md) file for some notes on how to get the
 linting auto-fixing to work.
+
+## Config Folders
+
+Configuration folders:
+
+* two `.config` folders (`/.config` and `/react-app/.config`)
+* one `.vscode` folder (`/.vscode`)
+
+The `.vscode` folder is the standard location for the VS Code workspace
+`settings.json` file.  See more on this in the
+[development notes](./Development.md).
+
+The standard location for many other configuration files is at the root of the
+repo or project, or sub-project for a sub-functionality of the project (such as
+the `react-app` folder).  When possible, I've moved these config files into a
+custom location -- a `.config` folder at those root locations.  This is to
+reduce clutter at the root locations.
+
+This strategy of moving config files to a custom location may cause issues
+sometimes and so these config files may later be moved back to their respective
+roots.  See below for an issue that requires temporary shuffling of the git
+attributes file.
+
+* modified: `.gitconfig`  
+  This optional file allows setting the user name and email address, if needed
+  for interacting with the repo remote source, but it also allows moving other
+  git config files to custom locations.  This file is used to point to the git
+  excludes/ignore and git attributes files and a user gitconfig file to contain
+  the name and email address.
+  * Issue: Note that the git attributes file seems to work from within the
+    config folder except when applying an automatic fix to incorrect file line
+    endings. In that case, a `.gitconfig_temp` file is used temporarily, coupled
+    with creating a temporary copy of the git attributes file at the root of the
+    repo while executing the fix.
+* modified: `package.json`
+  * Added the line `"cracoConfig": ".config/craco.config.js",` to move the craco
+    config into the config folder.  
+  * Added to the `eslintConfig` property an `extends` list element value of
+    `".config/.eslintrc.json"` to move the eslint config into the config folder.
+  * Added a `"stylelint"` property with an `extends` property value of
+    `".config/.stylelintrc.json"` to move the stylelint config into the config
+    folder.
+* modified: `tsconfig.json`  
+  Added the line `"extends": "./.config/tsconfig.paths.json",` to add paths
+  aliases into the config folder.
+
+## Tools
+
+In the tools folder, scripts (for Bash and PowerShell) were added for setting up
+the repo properly and for later usage if necessary to fix linebreaks after the
+repo is re-initialized and files are committed.
+
+* `set-up.bash`
+* `set-up.ps1`
+* `fix-linebreaks.bash`
+* `fix-linebreaks.ps1`

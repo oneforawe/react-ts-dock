@@ -1,0 +1,9 @@
+[core]
+  excludesfile = ./.config/.gitignore
+  #attributesfile = ./.config/.gitattributes
+  attributesfile = ./.gitattributes
+[include]
+  path = ./.config/user.gitconfig
+  # Optional file `user.gitconfig`, for developers contributing to the repo.
+  # If no `user.gitconfig` file exists in the `.config` folder, git should
+  # silently ignore the error.
