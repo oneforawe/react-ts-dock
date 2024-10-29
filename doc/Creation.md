@@ -1,5 +1,13 @@
 # Creation of the Repo
 
+Notes:
+
+* The commands below were not executed in the order shown, but the order
+  shown is more organized and should be appropriate.
+* To distinguish commands executed in the host system versus those executed in
+  the container system, I use the symbol `>` for the host system command line
+  prompt and the symbol `$` for the container system command line prompt.
+
 ## Strategy
 
 The project template code in this repo is intended to be downloaded/cloned to a
@@ -33,8 +41,7 @@ This project template has prerequisites or co-requisites, such as:
 ## Initialize Git, Docker, React
 
 The following shell (bash/zsh) commands were used to initialize the repository
-in a host system.  (For the host system command line prompt I use the symbol
-`>`.)
+in a host system.
 
 * Create and enter the project folder/directory.  
   `> mkdir react-ts-dock`  
@@ -79,8 +86,7 @@ in a host system.  (For the host system command line prompt I use the symbol
     `> docker compose exec node-dev-for-app bash --login`
 
 While in the container, initialize the React app using the version of Node
-(npx) installed with the Docker files.  (For the container system command line
-prompt I use the symbol `$`.)
+(npx) installed with the Docker files.
 
 * React: initialize the React app in the docker container.
   * In the project folder `~/react-ts`, initialize the react-app.  
@@ -93,6 +99,13 @@ prompt I use the symbol `$`.)
     editable in both host and container, being roughly immediately seen to
     change in each place and with changes to the React code immediately visible
     in the browser on the host.
+
+## Remove Warning
+
+The command below was used to remove a [warning](./Warnings.md) related to
+Create-React-App and Babel when executing `$ npm run build`.
+
+* `$ npm install --save-dev @babel/plugin-proposal-private-property-in-object`
 
 ## Reorganize
 
@@ -140,3 +153,32 @@ differences from the normal JSON syntax.
 At this point the source files for the React app were reorganized and modified,
 for instance, to start using non-relative import paths (in `src/index.tsx` and
 later elsewhere).
+
+## Linting
+
+Automatic code-linting can be implemented using [ESLint](https://eslint.org)
+with [Stylistic](https://eslint.style/) and [Stylelint](https://stylelint.io),
+along with the `.vscode/settings.json` file, so fixes are applied automatically
+each time a file is saved.
+
+* new folder: `.vscode`
+* new file: `.vscode/settings.json`
+
+I didn't use the auto-configuration and setup with `npm init @eslint/config`,
+since it had errors when it attempts to install all of the following:  
+`eslint@latest`  
+`eslint-plugin-react@latest`  
+`@typescript-eslint/eslint-plugin@latest`  
+`@typescript-eslint/parser@latest`
+
+Some of these packages already come with `react-scripts`. Instead, I avoided
+[warnings](./Warnings.md) by installing the following:
+
+* `$ npm install --save-dev eslint`
+* `$ npm install --save-dev @stylistic/eslint-plugin`
+* `$ npm install --save-dev stylelint`
+* `$ npm install --save-dev stylelint-config-standard-scss`
+* `$ npm install --save-dev --save-exact prettier`
+
+See the [troubleshoot](./Troubleshoot.md) file for some notes on how to get the
+linting auto-fixing to work.

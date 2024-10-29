@@ -1,0 +1,70 @@
+{
+  "files.eol": "\n",
+  "editor.rulers": [72, 80],
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "markdownlint.config": {
+    "default": true,
+    "MD024": { "siblings_only": true },
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.formatOnSave": true,
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[javascript][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": "never",
+      "source.fixAll.stylelint": "never",
+      "source.fixAll.prettier": "never",
+      "source.fixAll.markdownlint": "never",
+      "source.fixAll.shellcheck": "never",
+      "source.fixAll.eslint": "explicit",
+    },
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "stylelint.validate": ["css", "scss"],
+  "[css][scss]": {
+    // "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.pylint",
+    "editor.formatOnSave": true,
+  },
+  "shellcheck.ignorePatterns": {
+    "**/.gitconfig_*": true,
+    "**/.env": true,
+    "**/.env.*": true,
+  },
+  "[shellscript]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": false,
+    "editor.defaultFormatter": "timonwong.shellcheck",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": "never",
+      "source.fixAll.eslint": "never",
+      "source.fixAll.stylelint": "never",
+      "source.fixAll.prettier": "never",
+      "source.fixAll.markdownlint": "never",
+      "source.fixAll.shellcheck": "explicit",
+    },
+  },
+  "[powershell]": {
+    "files.eol": "\r\n",
+  },
+  "[csharp]": {
+    "files.eol": "\r\n",
+    "editor.tabSize": 4,
+  },
+}

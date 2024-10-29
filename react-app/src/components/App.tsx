@@ -3,14 +3,14 @@ import logo from 'assets/logo.svg';
 
 export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="app">
+      <header className="app-header">
+        <img src={logo} className="app-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className="app-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -20,4 +20,4 @@ export const App: React.FC = () => {
       </header>
     </div>
   );
-}
+};

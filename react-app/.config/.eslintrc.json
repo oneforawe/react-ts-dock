@@ -1,0 +1,185 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint", // from package @typescript-eslint/eslint-plugin
+    "react",              // from package eslint-plugin-react
+    "@stylistic"          // from package @stylistic/eslint-plugin
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "require": true
+  },
+  "rules": {
+    "@stylistic/linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "@stylistic/no-trailing-spaces": [
+      "error"
+    ],
+    "@stylistic/indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": [
+          "PropertyDefinition[decorators]",
+          "TSUnionType",
+          "TSIntersectionType",
+          "TSTypeParameterInstantiation"
+        ]
+      }
+    ],
+    "@stylistic/eol-last": [
+      "error"
+    ],
+    "@stylistic/semi": [
+      "error"
+    ],
+    "@stylistic/semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "@stylistic/member-delimiter-style": [
+      "error",
+      {
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "multilineDetection": "brackets"
+      }
+    ],
+    "@stylistic/block-spacing": [
+      "error"
+    ],
+    "@stylistic/space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "@stylistic/keyword-spacing": [
+      "error"
+    ],
+    "@stylistic/space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "always",
+        "asyncArrow": "always"
+      }
+    ],
+    "@stylistic/func-call-spacing": [
+      "error",
+      "never"
+    ],
+    "@stylistic/arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "@stylistic/type-annotation-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true,
+        "overrides": {
+          "colon": {
+            "before": false,
+            "after": true
+          }
+        }
+      }
+    ],
+    "@stylistic/brace-style": [
+      "error",
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "@stylistic/object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "@stylistic/key-spacing": [
+      "error",
+      {
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+          "beforeColon": false,
+          "afterColon": true,
+          "on": "value"
+        }
+      }
+    ],
+    "@stylistic/space-infix-ops": [
+      "error"
+    ],
+    "@stylistic/quotes": [
+      "error",
+      "single"
+    ],
+    "@stylistic/jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "react/react-in-jsx-scope": "off", // Not necessary since React 17
+    "react/jsx-uses-react": "off",     // Not necessary since React 17
+    "react/prop-types": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
+  "root": true
+}
