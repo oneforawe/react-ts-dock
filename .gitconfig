@@ -1,5 +1,6 @@
 [core]
   excludesfile = ./.config/.gitignore
+  attributesfile = ./.config/.gitattributes
 [include]
   path = ./.config/user.gitconfig
   # Optional file `user.gitconfig`, for developers contributing to the repo.

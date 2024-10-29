@@ -61,11 +61,12 @@ in a host system.
     contribute to the repo.  This file is optional, depending on the method of
     connecting to the remote source of the repo.
   * Create a `.gitignore` file, in particular ignoring the optional file
-    `> .config/user.gitconfig`.
-  * Create a `.gitconfig` file at the project root, referring to that
-    `.gitignore` file and the optional `user.gitconfig` file.  (If no
-    `user.gitconfig` file exists in the `.config` folder, git should silently
-    ignore the error.)
+    `.config/user.gitconfig`.
+  * Create a `.gitattributes` file to specify line-ending types.
+  * Create a `.gitconfig` file at the project root, referring to those
+    `.gitignore` and `.gitattributes` files and the optional `user.gitconfig`
+    file.  (If no `user.gitconfig` file exists in the `.config` folder, git
+    should silently ignore the error.)
   * Apply the `.gitconfig` file to the repo.  
     `> git config --local include.path ../.gitconfig`
   * Set up git remote (optionally using ssh, where ssh config has already been
