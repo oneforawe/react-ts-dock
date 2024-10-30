@@ -1,0 +1,46 @@
+.counter {
+  // background-color: #282c34;
+  background-color: #482c34;
+
+  .body {
+    align-items: stretch;
+    gap: 5px;
+
+    .data {
+      align-self: center;
+
+      .label {
+        margin-right: 10px;
+      }
+    }
+
+    .checkbox {
+      user-select: none; // disable text highlighting
+      cursor: pointer;
+
+      &:hover {
+        background-color: #886c74;
+      }
+
+      input {
+        cursor: pointer;
+      }
+
+      label {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      // background-color: #482c34;
+      background-color: #684c54;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #886c74;
+      }
+    }
+  }
+}
