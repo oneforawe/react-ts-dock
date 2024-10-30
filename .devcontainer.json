@@ -1,0 +1,28 @@
+{
+  "name": "React-TS-Dock in Docker: React-TS-Docked",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "node-dev-for-app", // also specified in docker-compose.yml file
+  "workspaceFolder": "/home/devuser/react-ts-docked", // mount point in container
+  "remoteUser": "devuser", // container user for VSCode to use when connecting
+  // The settings below were intended to help automatically install or sync the
+  // host-environment extensions in the container environment, but this goal has
+  // not yet been achieved.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "timonwong.shellcheck",
+        "eamodio.gitlens",
+        "ybaumes.highlight-trailing-white-spaces",
+        "pucelle.vscode-css-navigation",
+        "compulim.indent4to2"
+      ]
+    },
+    "settings": {
+      "remote.containers.defaultExtensions": true
+    }
+  }
+}

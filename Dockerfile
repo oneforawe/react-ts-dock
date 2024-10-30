@@ -5,13 +5,13 @@
 
 # Use a Debian base image and install some utilities.
 FROM bitnami/minideb:bullseye
-RUN install_packages bash curl ca-certificates vim
+RUN install_packages bash curl ca-certificates vim git
 
 # Create a non-root user; Switch to the non-root user and set working directory.
 RUN addgroup --system devgroup && adduser --system devuser --ingroup devgroup
 USER devuser
 ENV HOME="/home/devuser"
-WORKDIR /home/devuser/react-ts
+WORKDIR /home/devuser/react-ts-docked
 
 # Install nvm and node/npm/npx for the non-root user.
 # Create shell profile to allow nvm installation to make `nvm` command available.
@@ -48,8 +48,8 @@ CMD ["bash", "--login"]
 #       $ docker compose up -d
 #       $ docker compose exec node-dev-for-app bash --login
 #    B. Alternative
-#       $ docker run --name react-ts --user 100:101 -it react-ts-dock  (Alpine)
-#       $ docker run --name react-ts --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
+#       $ docker run --name react-ts-docked --user 100:101 -it react-ts-dock  (Alpine)
+#       $ docker run --name react-ts-docked --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
 
 # TEARING DOWN:
-# docker container rm --force react-ts && docker image rm react-ts-dock
+# docker container rm --force react-ts-docked && docker image rm react-ts-dock

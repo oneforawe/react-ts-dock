@@ -239,3 +239,39 @@ repo is re-initialized and files are committed.
 * `set-up.ps1`
 * `fix-linebreaks.bash`
 * `fix-linebreaks.ps1`
+
+## State Management
+
+In case Redux state management is desired (and isn't overkill) the
+[reactjs/toolkit](https://redux-toolkit.js.org/introduction/getting-started)
+and [react-redux](https://react-redux.js.org) packages are used and the
+infrastructure is (re)organized so import statements are concise and usage is
+nicely object-based with auto-complete / tab-completion capabilities.
+
+* `$ npm install @reduxjs/toolkit`
+* `$ npm install react-redux`
+* `$ npm install --save-dev @types/react-redux`
+
+With the code (re)organization, simple custom import statements such as the
+following can be used:  
+`import { use, dispatch, actions } from 'store';`
+
+See more code in the repo for demonstration of usage.
+
+## Add-ons
+
+* `$ npm install --save-dev sass`
+  (for extended CSS - Syntactically Awesome Style Sheets)
+* `$ npm install sanitize.css` (for a preferred starting point with CSS)
+* `$ npm install luxon` (for date-time utilities)
+* `$ npm install --save-dev @types/luxon`
+* `$ npm install lodash` (for computational utilities)
+* `$ npm install --save-dev @types/lodash`
+* `$ npm install axios` (for HTTP requests)
+* `$ npm install runtypes` (for data validation when fetching from external API)
+
+## React-App Src
+
+The code in the `react-app/src` folder was developed from the starting point
+provided by create-react-app (the first initializing command) to its current
+state as the above steps were taken to hone the project.

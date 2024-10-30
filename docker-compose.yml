@@ -2,12 +2,12 @@ services:
   node-dev-for-app:
     build: .  # Builds the image using the Dockerfile in the current directory
     image: react-ts-dock
-    container_name: react-ts
+    container_name: react-ts-docked
     ports:
       - 3000:3000
     volumes:
-      - .:/home/devuser/react-ts  # Mount current directory into the container
-    working_dir: /home/devuser/react-ts
+      - .:/home/devuser/react-ts-docked  # Mount current directory into the container
+    working_dir: /home/devuser/react-ts-docked
     environment:
       - CHOKIDAR_USEPOLLING=true
       - NVM_DIR=/home/devuser/.nvm

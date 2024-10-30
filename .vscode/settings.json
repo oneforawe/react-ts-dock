@@ -16,6 +16,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
   },
+  "eslint.workingDirectories": [
+    ".",
+    "./react-app",
+    "./react-app/.config/.eslintrc.json",
+  ],
   "[javascript][typescript][typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true,
