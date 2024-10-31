@@ -1,6 +1,13 @@
 # Reference:
 # https://docs.docker.com/reference/dockerfile/#dockerignore-file
 
-.dockerignore
-node_modules
-build
+# Note: The .dockerignore file is not used when implementing a volume such as
+# .:/home/devuser/react-ts-docked with the docker-compose.yml file.
+
+# No need to ignore any files; editing will be done in the container.
+
+# Some content initially considered for this .dockerignore file:
+# .git
+# .dockerignore
+# node_modules
+# build
