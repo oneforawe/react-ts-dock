@@ -6,8 +6,8 @@
 # * View the line-endings for files (index version, working tree version, & attributes specifications):
 #     git ls-files --eol
 # * Force the files to match the .gitattributes specifications file:
-#   [TODO: Add confirmed commands here; see react-ts README usage steps and/or
-#    tools set-up scripts for special case of accomplishing this task.
+#   [TODO: Add confirmed commands here; see tools set-up scripts for special
+#    case of accomplishing this task.
 #    For example:
 #      git ls-files -z | xargs -0 rm -f    (for Bash)
 #      git ls-files | % {Remove-Item $_}   (for PowerShell)

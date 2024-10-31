@@ -90,7 +90,7 @@ While in the container, initialize the React app using the version of Node
 (npx) installed with the Docker files.
 
 * React: initialize the React app in the docker container.
-  * In the project folder `~/react-ts`, initialize the react-app.  
+  * In the project folder `~/react-ts-docked`, initialize the react-app.  
     `$ npx create-react-app react-app --template typescript`
   * Enter the React app and check live-edits.  
     `$ cd react-app`  
@@ -189,11 +189,16 @@ linting auto-fixing to work.
 Configuration folders:
 
 * two `.config` folders (`/.config` and `/react-app/.config`)
+* one `.devcontainer` folder (`/.devcontainer`)
 * one `.vscode` folder (`/.vscode`)
 
 The `.vscode` folder is the standard location for the VS Code workspace
 `settings.json` file.  See more on this in the
 [development notes](./Development.md).
+
+The `.devcontainer` folder is a valid location for docker configuration files
+such as `Dockerfile`, `docker-compose.yml`, and `devcontainer.json`, but not
+`.dockerignore`.  The `.dockerignore` file must remain at the project root.
 
 The standard location for many other configuration files is at the root of the
 repo or project, or sub-project for a sub-functionality of the project (such as

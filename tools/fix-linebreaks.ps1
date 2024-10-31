@@ -55,7 +55,7 @@ git checkout .
 Remove-Item .gitattributes
 
 # Note on fixing "by hand" any incorrect file line-endings a file.
-#   1. Open the repo root folder `react-ts` in VSCode by executing
+#   1. Open the repo root folder `react-ts-dock` in VSCode by executing
 #      `code .`
 #   2. Select a file to view in the (primary)
 #      [side bar](https://code.visualstudio.com/docs/getstarted/userinterface) /

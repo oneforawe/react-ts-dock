@@ -51,7 +51,7 @@ To use VSCode for container development:
 2. Open a new window of VSCode and in the main left menu, hover the cursor over
    each icon for a few seconds to see what each represents.
 3. In the main left menu, select the icon to open the "Remote Explorer".
-4. Find the `react-ts-dock` container, hover the mouse over it, and select the
+4. Find the `react-ts-docked` container, hover the mouse over it, and select the
    icon to "Attach in Current Window".
 5. In the main left menu, select the icon to open the "Extensions".
 6. Ensure that all of the desired extensions are installed in the container.
@@ -67,8 +67,8 @@ Besides running [ESLint](https://eslint.org/) and
 in VSCode, you can also run each of them in the container shell/terminal.
 
 In the terminal, to run linting on many files and view issues with the files,
-change directory into the root project folder (`react-ts`) and run the following
-commands:
+change directory into the sub-project root folder `react-app` and run the
+following commands:
 
 * `$ npx eslint src --ext .ts,.js,.tsx`
 * `$ npx stylelint "**/*.{css,scss}" --ignore-pattern "build/*"`

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Language:  bash
-# Purpose:   Set up react-ts template to be ready for new-project development.
+# Purpose:   Set up react-ts-dock template for new-project development.
 # Execution: In the shell, from the root of the repo, execute the following:
 #            bash ./tools/set-up.bash
 
@@ -67,7 +67,7 @@ rm .gitconfig
 cp .config/.gitconfig_sample .gitconfig
 
 # Note on fixing "by hand" any incorrect file line-endings a file.
-#   1. Open the repo root folder `react-ts` in VSCode by executing
+#   1. Open the repo root folder `react-ts-dock` in VSCode by executing
 #      `code .`
 #   2. Select a file to view in the (primary)
 #      [side bar](https://code.visualstudio.com/docs/getstarted/userinterface) /
