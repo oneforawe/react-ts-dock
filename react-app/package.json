@@ -27,6 +27,9 @@
   "stylelint": {
     "extends": "./.config/.stylelintrc.json"
   },
+  "engines": {
+    "node": ">=20.17.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
