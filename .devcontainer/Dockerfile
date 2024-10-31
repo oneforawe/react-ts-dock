@@ -28,8 +28,9 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | b
   && nvm alias default $DEFAULT_NODE_VERSION \
   && nvm use default;
 
-# Copy the rest of the application.
-COPY . .
+# Copy the code (excluding files from .dockerignore).
+# COPY .. .
+# No need to copy the code when using a volume to share the code from the host.
 
 # CONTAINER-START COMMANDS:
 
@@ -47,7 +48,7 @@ CMD ["bash", "--login"]
 #    A. Using docker-compose.yml and service name 'node-dev-for-app'
 #       $ docker compose up -d
 #       $ docker compose exec node-dev-for-app bash --login
-#    B. Alternative
+#    B. Alternative (but without implementing volume in docker-compose.yml)
 #       $ docker run --name react-ts-docked --user 100:101 -it react-ts-dock  (Alpine)
 #       $ docker run --name react-ts-docked --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
 

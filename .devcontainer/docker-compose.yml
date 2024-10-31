@@ -1,0 +1,18 @@
+services:
+  node-dev-for-app:
+    build:
+      context: ".." # parent directory, root of the project
+      dockerfile: .devcontainer/Dockerfile # location relative to the context
+    image: react-ts-dock
+    container_name: react-ts-docked
+    ports:
+      - 3000:3000
+    volumes:
+      - ..:/home/devuser/react-ts-docked # Mount parent directory into container
+      # Note that the volume does not use the .dockerignore file.
+    working_dir: /home/devuser/react-ts-docked
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NVM_DIR=/home/devuser/.nvm
+    tty: true # For interactive bash sessions
+    user: "101:101" # Use UID:GID instead of username `devuser` (with `devgroup`)
