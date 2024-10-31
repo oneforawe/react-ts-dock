@@ -1,0 +1,20 @@
+# Reference: https://prettier.io/docs/en/ignore
+
+# Compare the ignore patterns in this file with the .vscode/settings.json to
+# ensure consistency over which file types Prettier is applied.
+
+# Defaults:
+# Prettier already ignores by default these:
+# **/.git
+# **/.s
+# **/.svn
+# **/.hg
+# **/node_modules
+
+# Non-defaults:
+# Ignore everything...
+*
+# ...except JSON and CSS/SCSS.
+!**/*.json
+!**/*.css
+!**/*.scss

@@ -1,2 +1,2 @@
 export * from './reportWebVitals';
-// export * from './setupTests';
+export * from './setupTests';
