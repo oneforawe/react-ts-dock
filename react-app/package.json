@@ -27,9 +27,6 @@
   "stylelint": {
     "extends": "./.config/.stylelintrc.json"
   },
-  "prettier": {
-    "ignorePath": "./.config/.prettierignore"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
