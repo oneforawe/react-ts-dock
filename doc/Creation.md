@@ -14,16 +14,25 @@ The project template code in this repo is intended to be downloaded/cloned to a
 host system but will run from within a container system via Docker in order to
 keep the app environment and dependencies isolated and independent of the host
 system.  Ideally, this keeps the host system clean and the container system
-reproducible and consistent, especially in development.  The code will be
-mounted into the container from the host system, so live edits can be made from
-within the host system while developing in a live-edit mode, and those edits
-will be seen to immediately affect the running container processes in that
-case.  Processes within the container may also modify the code, and those
-changes will be likewise immediately available in the host code.  So, for
-instance, during the process of creating this project, after installing
-node/npm/npx in the container, `npx create-react-app` can be executed in the
-container to create a React project template that is available in the host
-system for further development.
+reproducible and consistent, especially in development.
+
+The code will be mounted into the container from the host system.  At first this
+decision was made with the intention of editing files within the container from
+the host system directly on the files in the host system.  This is possible, but
+the best approach found was to instead use a VSCode extension to edit files
+"remotely" from the host system using VSCode, editing the files within the
+container to take advantage of npm packages installed there for linting.
+
+That being said, still, live edits can be made from within the host system
+directly on the files in the host system (without taking advantage of full
+linting capabilities), while developing in a live-edit mode, and those edits
+will be seen to immediately affect the running container processes in that case.
+Processes within the container may also modify the code, and those changes will
+be likewise immediately available in the host code.  So, for instance, during
+the process of creating this project, after installing node/npm/npx in the
+container, `npx create-react-app` was executed in the container to create the
+React project template that became available in the host system for further
+development.
 
 ## Prerequisites
 
@@ -280,3 +289,7 @@ See more code in the repo for demonstration of usage.
 The code in the `react-app/src` folder was developed from the starting point
 provided by create-react-app (the first initializing command) to its current
 state as the above steps were taken to hone the project.
+
+## Doc
+
+Continually wrote and revised the documentation.
