@@ -5,6 +5,20 @@
 #            .\tools\set-up.ps1
 
 
+# 0. Requirement
+try {
+  $RequiredFile = ".\.config\.gitconfig_temp"
+  [System.IO.File]::OpenRead($RequiredFile).Close()
+  # If successful, the required file exists and is readable, so continue.
+}
+catch {
+  # If unsuccessful, the required file either doesn't exist or isn't readable,
+  # so we must exit and abort the fix-linebreaks attempt.
+  Write-Output "Error: Missing required file '$RequiredFile' - aborting fix-linebreaks attempt."
+  Exit 1
+}
+
+
 # 1. Reset and initialize the repo for git.
 Write-Output "Resetting and initializing the repo for git."
 #    1. Delete the git folder.
@@ -25,10 +39,10 @@ Write-Output "Fixing any incorrect file linebreaks according to .gitattributes."
 #    FYI: linebreaks = line-endings = end-of-line characters ~ eol
 #    1. Use the temporary git config file with a copy of the git attributes file
 #        at the root of the repo to allow the following steps to work properly.
-#        `rm .gitconfig`
+#        `mv .gitconfig .config/.gitconfig_original_copy`
 #        `cp .config/.gitconfig_temp .gitconfig`
 #        `cp .config/.gitattributes .gitattributes`
-Remove-Item .gitconfig
+Move-Item .gitconfig .config/.gitconfig_original_copy
 Copy-Item .config/.gitconfig_temp .gitconfig
 Copy-Item .config/.gitattributes .gitattributes
 #    2. Stage all of the (non-ignored) files.
@@ -61,10 +75,10 @@ git rm --cached -r . *> $null # silence output for script
 #    6. Clean up the temp files and restore the git config.
 #        `rm .gitattributes`
 #        `rm .gitconfig`
-#        `cp .config/.gitconfig_sample .gitconfig`
+#        `mv .config/.gitconfig_original_copy .gitconfig`
 Remove-Item .gitattributes
 Remove-Item .gitconfig
-Copy-Item .config/.gitconfig_sample .gitconfig
+Move-Item .config/.gitconfig_original_copy .gitconfig
 
 # Note on fixing "by hand" any incorrect file line-endings a file.
 #   1. Open the repo root folder `react-ts-dock` in VSCode by executing
@@ -80,17 +94,17 @@ Copy-Item .config/.gitconfig_sample .gitconfig
 
 
 # 3. Create a secrets file.
-Write-Output "Creating a secrets file."
+#Write-Output "Creating a secrets file."
 #    `cp src/config/secrets_template.ts src/config/secrets.ts`
-Copy-Item src/config/secrets_template.ts src/config/secrets.ts
+#Copy-Item src/config/secrets_template.ts src/config/secrets.ts
 #    This new secrets file will also be ignored, since it's included in the
 #    ignore file.
 
 
 # 4. Install the npm packages.
-Write-Output "Installing the npm packages."
+#Write-Output "Installing the npm packages."
 #    `npm install`
-npm install
+#npm install
 # As of 2024-01-24 there are about 14 deprecation warnings and 9
 # vulnerabilities (3 moderate, 6 high) expected and the `package-lock.json`
 # file is not altered by the installation. The warnings and vulnerabilities are

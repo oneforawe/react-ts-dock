@@ -5,6 +5,15 @@
 #            bash ./tools/set-up.bash
 
 
+# 0. Requirement
+requiredFile="./.config/.gitconfig_temp"
+if [[ ! -r requiredFile ]] # if not readable
+then
+	echo "Error: Missing required file '${requiredFile}' - aborting fix-linebreaks attempt." &&
+	exit 1 # terminate and indicate error with exit code
+fi
+
+
 # 1. Reset and initialize the repo for git.
 echo "Resetting and initializing the repo for git."
 #    1. Delete the git folder.
@@ -25,10 +34,10 @@ echo "Fixing any incorrect file linebreaks according to .gitattributes."
 #    FYI: linebreaks = line-endings = end-of-line characters ~ eol
 #    1. Use the temporary git config file with a copy of the git attributes file
 #        at the root of the repo to allow the following steps to work properly.
-#        `rm .gitconfig`
+#        `mv .gitconfig .config/.gitconfig_original_copy`
 #        `cp .config/.gitconfig_temp .gitconfig`
 #        `cp .config/.gitattributes .gitattributes`
-rm .gitconfig
+mv .gitconfig .config/.gitconfig_original_copy
 cp .config/.gitconfig_temp .gitconfig
 cp .config/.gitattributes .gitattributes
 #    2. Stage all of the (non-ignored) files.
@@ -61,10 +70,10 @@ git rm --cached -r . &>/dev/null # silence output for script
 #    6. Clean up the temp files and restore the git config.
 #        `rm .gitattributes`
 #        `rm .gitconfig`
-#        `cp .config/.gitconfig_sample .gitconfig`
+#        `mv .config/.gitconfig_original_copy .gitconfig`
 rm .gitattributes
 rm .gitconfig
-cp .config/.gitconfig_sample .gitconfig
+mv .config/.gitconfig_original_copy .gitconfig
 
 # Note on fixing "by hand" any incorrect file line-endings a file.
 #   1. Open the repo root folder `react-ts-dock` in VSCode by executing
@@ -80,17 +89,17 @@ cp .config/.gitconfig_sample .gitconfig
 
 
 # 3. Create a secrets file.
-echo "Creating a secrets file."
+#echo "Creating a secrets file."
 #    `cp src/config/secrets_template.ts src/config/secrets.ts`
-cp src/config/secrets_template.ts src/config/secrets.ts
+#cp src/config/secrets_template.ts src/config/secrets.ts
 #    This new secrets file will also be ignored, since it's included in the
 #    ignore file.
 
 
 # 4. Install the npm packages.
-echo "Installing the npm packages."
+#echo "Installing the npm packages."
 #    `npm install`
-npm install
+#npm install
 # As of 2024-01-24 there are about 14 deprecation warnings and 9
 # vulnerabilities (3 moderate, 6 high) expected and the `package-lock.json`
 # file is not altered by the installation. The warnings and vulnerabilities are
