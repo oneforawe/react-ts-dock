@@ -7,9 +7,9 @@
 
 # 0. Requirement
 requiredFile="./.config/.gitconfig_temp"
-if [[ ! -r requiredFile ]] # if not readable
+if [[ ! -r $requiredFile ]] # if not readable
 then
-	echo "Error: Missing required file '${requiredFile}' - aborting fix-linebreaks attempt." &&
+	echo "Error: Missing required file '$requiredFile' - aborting set-up attempt." &&
 	exit 1 # terminate and indicate error with exit code
 fi
 

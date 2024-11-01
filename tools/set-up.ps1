@@ -13,8 +13,8 @@ try {
 }
 catch {
   # If unsuccessful, the required file either doesn't exist or isn't readable,
-  # so we must exit and abort the fix-linebreaks attempt.
-  Write-Output "Error: Missing required file '$RequiredFile' - aborting fix-linebreaks attempt."
+  # so we must exit and abort the set-up attempt.
+  Write-Output "Error: Missing required file '$RequiredFile' - aborting set-up attempt."
   Exit 1
 }
 
