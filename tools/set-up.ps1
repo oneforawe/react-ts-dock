@@ -94,9 +94,9 @@ Move-Item .config/.gitconfig_original_copy .gitconfig
 
 
 # 3. Create a secrets file.
-#Write-Output "Creating a secrets file."
+Write-Output "Creating a secrets file."
 #    `cp src/config/secrets_template.ts src/config/secrets.ts`
-#Copy-Item src/config/secrets_template.ts src/config/secrets.ts
+Copy-Item react-app/src/config/secrets_template.ts react-app/src/config/secrets.ts
 #    This new secrets file will also be ignored, since it's included in the
 #    ignore file.
 

@@ -89,9 +89,9 @@ mv .config/.gitconfig_original_copy .gitconfig
 
 
 # 3. Create a secrets file.
-#echo "Creating a secrets file."
+echo "Creating a secrets file."
 #    `cp src/config/secrets_template.ts src/config/secrets.ts`
-#cp src/config/secrets_template.ts src/config/secrets.ts
+cp react-app/src/config/secrets_template.ts react-app/src/config/secrets.ts
 #    This new secrets file will also be ignored, since it's included in the
 #    ignore file.
 
