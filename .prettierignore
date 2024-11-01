@@ -16,5 +16,16 @@
 *
 # ...except JSON and CSS/SCSS.
 !**/*.json
+!**/*.yml
 !**/*.css
 !**/*.scss
+
+# Alternative matching strategy; could compare later for efficiency:
+# Ignore everything (still allowing sub-folder scanning)...
+#*
+#!*/
+## ...except these file types.
+#!*.json
+#!*.yml
+#!*.css
+#!*.scss

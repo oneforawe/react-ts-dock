@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.formatOnSave": true,
   },
-  "[json]": {
+  "[json][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
   },
