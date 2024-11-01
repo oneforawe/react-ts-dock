@@ -96,11 +96,12 @@ cp react-app/src/config/secrets_template.ts react-app/src/config/secrets.ts
 #    ignore file.
 
 
+# Perform the next step in the container.
 # 4. Install the npm packages.
 #echo "Installing the npm packages."
 #    `npm install`
 #npm install
-# As of 2024-01-24 there are about 14 deprecation warnings and 9
+# As of 2024-11-01 there are about 24 deprecation warnings and 9
 # vulnerabilities (3 moderate, 6 high) expected and the `package-lock.json`
 # file is not altered by the installation. The warnings and vulnerabilities are
 # [not concerning](https://github.com/facebook/create-react-app/issues/11174).
