@@ -42,15 +42,28 @@ CMD ["bash", "--login"]
 
 # SETTING UP:
 # Executed from within the project folder:
+
+# (Now, with docker files in their own config folder '.devcontainer'.)
 # 1. Build
-#    $ docker compose build
+#    > docker compose -f .devcontainer/docker-compose.yml build
 # 2. Up/Run
 #    A. Using docker-compose.yml and service name 'node-dev-for-app'
-#       $ docker compose up -d
-#       $ docker compose exec node-dev-for-app bash --login
+#       > docker compose -f .devcontainer/docker-compose.yml up -d
+#       > docker compose -f .devcontainer/docker-compose.yml exec node-dev-for-app bash --login`
 #    B. Alternative (but without implementing volume in docker-compose.yml)
-#       $ docker run --name react-ts-docked --user 100:101 -it react-ts-dock  (Alpine)
-#       $ docker run --name react-ts-docked --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
+#       > docker run --name react-ts-docked --user 100:101 -it react-ts-dock  (Alpine)
+#       > docker run --name react-ts-docked --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
+
+# (Previously, with docker files at the project root.)
+# 1. Build
+#    > docker compose build
+# 2. Up/Run
+#    A. Using docker-compose.yml and service name 'node-dev-for-app'
+#       > docker compose up -d
+#       > docker compose exec node-dev-for-app bash --login
+#    B. Alternative (but without implementing volume in docker-compose.yml)
+#       > docker run --name react-ts-docked --user 100:101 -it react-ts-dock  (Alpine)
+#       > docker run --name react-ts-docked --user 101:101 -it react-ts-dock  (Bitnami/Minideb Debian)
 
 # TEARING DOWN:
 # docker container rm --force react-ts-docked && docker image rm react-ts-dock
