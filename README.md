@@ -100,9 +100,7 @@ execute the following instructions and commands.
      save the file.  You should immediately (or very quickly) see the text on
      the site in the browser change to reflect the edit.  Also, try making an
      edit to change the indentation of one of the JSX tags; when you save the
-     file, the linting/formatting should automatically correct the indentation.  
-     (Note: Some errors in SCSS are not auto-fixed -- see to-do items below --
-     but something like bad indentation should be auto-fixed.)
+     file, the linting/formatting should automatically correct the indentation.
    * After testing the site and confirming live-editing and auto-linting as
      described above, feel free to play around with the site and code to
      become familiar with the project template.
