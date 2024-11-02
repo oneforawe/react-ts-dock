@@ -230,7 +230,8 @@ attributes file.
     config folder except when applying an automatic fix to incorrect file line
     endings. In that case, a `.gitconfig_temp` file is used temporarily, coupled
     with creating a temporary copy of the git attributes file at the root of the
-    repo while executing the fix.
+    repo while executing the fix with the `fix-linebreaks` scripts in the tools
+    folder.
 * modified: `package.json`
   * Added the line `"cracoConfig": ".config/craco.config.js",` to move the craco
     config into the config folder.  

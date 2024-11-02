@@ -16,8 +16,8 @@ The purpose of this repo is:
 * to act as a template to easily start new projects without re-writing common
   "boilerplate" code and configurations,
 * to act as a reference to recall how to write certain patterns of code and
-  accomplish certain tasks (such as achieving robust file-line-ending control
-  with the repo code and steps below, to avoid issues later in development), and
+  accomplish certain tasks (such as Dockerizing a React app, or achieving robust
+  file-line-ending control to avoid issues later in development), and
 * to demonstrate this particular approach and organization of code for any such
   Dockerized React TypeScript project, using a generic folder structure,
   [code linting](./doc/Development.md) (geared for usage with
