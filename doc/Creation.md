@@ -293,3 +293,10 @@ state as the above steps were taken to hone the project.
 ## Doc
 
 Continually wrote and revised the documentation.
+
+## Hosting
+
+Add a `homepage` location in `react-app/package.json` to allow hosting on a demo
+site with the app in its own folder.
+
+* `"homepage": "./"`
