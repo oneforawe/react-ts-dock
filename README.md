@@ -75,7 +75,7 @@ execute the following instructions and commands.
 
    * `> docker compose -f .devcontainer/docker-compose.yml build \`  
      `&& docker compose -f .devcontainer/docker-compose.yml up -d`
-   * `docker compose -f .devcontainer/docker-compose.yml exec node-dev-for-app bash --login`
+   * `> docker compose -f .devcontainer/docker-compose.yml exec node-dev-for-app bash --login`
 
 5. In the container, enter the `react-app` directory, install the NPM packages,
   and then start the app in development/live-edit mode.
