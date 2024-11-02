@@ -117,7 +117,8 @@ A to-do list for continuing development of this template:
 * Investigate the possibility of moving the `.prettierignore` file into the
   `react-app` (at `src/.config/`) with an edited `package.json` as seen in
   commit `342aa35` (though that set-up didn't work).  Or consider using a
-  formatter other than Prettier for json, yaml, css, and scss.
+  formatter other than Prettier for json, yaml, css, and scss.  (Prettier also
+  seems to not automatically indent css/scss as desired.)
 * Investigate simplifying the process to automatically fix file-line-endings,
   especially forcing git to use the attributes file in the config folder and
   seeing if `git add --renormalize .` can work; that would simplify files and
