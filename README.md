@@ -33,6 +33,14 @@ properly with VSCode and some details on Docker and linting.  And see the
 [creation notes](./doc/Creation.md) for details on how this repo was created and
 how to re-create it.
 
+## Demo
+
+The code design is the focus whereas the app design is not; the app is merely
+constructed to demonstrate usage of these code patterns and technologies.
+
+A demo of the app can be found
+[here](https://www.andrew-forrester.com/demos/react-ts-dock/).
+
 ## Usage
 
 Note: To distinguish commands executed in the host system versus those executed
