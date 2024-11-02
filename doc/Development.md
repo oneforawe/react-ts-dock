@@ -48,7 +48,7 @@ and gain other useful features:
 
 To use VSCode for container development:
 
-1. Start the container.
+1. Ensure that the container is started/running.
 2. Open a new window of VSCode and in the main left menu, hover the cursor over
    each icon for a few seconds to see what each represents.
 3. In the main left menu, select the icon to open the "Remote Explorer".
@@ -61,6 +61,8 @@ To use VSCode for container development:
 8. If a button to "Manage Unsafe Repositories" is present, click on it and
    select the `react-ts-docked` container to allow VSCode to show the git status
    of the files in the file "Explorer" menu.
+
+If encountering problems, see the [troubleshoot file notes](./Troubleshoot.md).
 
 ## ESLint and Stylelint
 

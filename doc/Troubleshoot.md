@@ -15,7 +15,8 @@ to work when editing in VS Code.
 
 In other words, in order for auto-fixing to work when using VS Code:
 
-* Either one must "Open Folder" at the root `react-ts-dock` folder,
+* Either one must open the project at the root folder `react-ts-docked` (in the
+  container),
 * or one must place a copy of the `.vscode` folder (and its contents) in
   whatever folder is opened with VS Code, such as the `react-app` folder if one
   wants to just open that portion of the project.
