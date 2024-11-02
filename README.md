@@ -42,10 +42,11 @@ prompt and the symbol `$` for the container system command line prompt.
 To use this repo as a template starting point for your own project, first you
 will get this repo set up properly to run the app.  And once the app can run and
 you can verify that automatic linting is enabled in VSCode (via an extension to
-allow editing from within the docker container), you can delete the `.git`
-folder (again) and initialize a new git repo from this template if needed. The
-scripts referenced below include steps on resetting and initializing the repo as
-part of setting up; open the scripts to get further explanation.
+allow editing from within the docker container), the repo will already be in a
+git-initialized state (due to the set-up script) where you can develop your own
+project from from there.  The set-up scripts referenced below include steps on
+resetting and initializing the repo as part of setting up; open the scripts to
+get further explanation.
 
 To run the app in this repo, use a (virtual) terminal such as iTerm2 or Windows
 Terminal or the embedded terminal in VSCode, running a shell such as GNU Bash or
