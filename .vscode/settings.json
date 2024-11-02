@@ -20,7 +20,6 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.pylint": "never",
       "source.fixAll.stylelint": "never",
       "source.fixAll.prettier": "never",
       "source.fixAll.markdownlint": "never",
@@ -36,11 +35,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
   },
-  "[python]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "ms-python.pylint",
-    "editor.formatOnSave": true,
-  },
   "shellcheck.ignorePatterns": {
     "**/.gitconfig_*": true,
     "**/.env": true,
@@ -52,7 +46,6 @@
     "editor.defaultFormatter": "timonwong.shellcheck",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.pylint": "never",
       "source.fixAll.eslint": "never",
       "source.fixAll.stylelint": "never",
       "source.fixAll.prettier": "never",

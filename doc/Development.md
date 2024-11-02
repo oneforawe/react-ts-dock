@@ -35,13 +35,14 @@ and gain other useful features:
   * ESLint: `dbaeumer.vscode-eslint`
   * Stylelint: `stylelint.vscode-stylelint`
   * ShellCheck: `timonwong.shellcheck`
-  * Pylint: `ms-python.pylint` (not used but referenced in `settings.json`)
 * General
-  * GitLens: `eamodio.gitlens`  (you may want to usually keep this extension disabled)
-  * Highlight Trailing White Spaces: `ybaumes.highlight-trailing-white-spaces`
+  * Highlight Trailing White Spaces: `ybaumes.highlight-trailing-white-spaces`  
+    Trailing white spaces have syntactic meaning in markdown files, so it can be
+    important to see them in the raw code.
 * Recommended Utilities
   * CSS Navigation: `pucelle.vscode-css-navigation`
   * Indent 4-to-2: `compulim.indent4to2`
+  * GitLens: `eamodio.gitlens`  (you may want to usually keep this extension disabled)
 
 ## Remote Development
 
@@ -54,7 +55,8 @@ To use VSCode for container development:
 4. Find the `react-ts-docked` container, hover the mouse over it, and select the
    icon to "Attach in Current Window".
 5. In the main left menu, select the icon to open the "Extensions".
-6. Ensure that all of the desired extensions are installed in the container.
+6. Ensure that all of the linting extensions above are installed in the
+   container, and any other desired extensions.
 7. In the main left menu, select the icon to open the "Source Control".
 8. If a button to "Manage Unsafe Repositories" is present, click on it and
    select the `react-ts-docked` container to allow VSCode to show the git status
