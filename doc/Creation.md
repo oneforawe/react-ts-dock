@@ -43,7 +43,6 @@ This project template has prerequisites or co-requisites, such as:
 * Web-Development
   * shell (bash or zsh, etc)
   * version control (git)
-  * secure connections (ssh)
   * browser (for example: Chrome, DevTools, Redux DevTools)
   * containerization (Docker: Docker Desktop, Docker Engine)
 
